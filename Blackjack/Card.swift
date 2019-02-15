@@ -48,6 +48,21 @@ class Card {
         }
         return nil
     }
+    static var blankImage:UIImage{
+        let frame = CGRect(x: 0, y: 0, width: 100, height: 150)
+        let myView = UIView.init(frame: frame)
+        myView.layer.backgroundColor = UIColor.black.cgColor
+        myView.layer.borderColor = UIColor.black.cgColor
+        myView.layer.borderWidth = 1.5
+        myView.layer.cornerRadius = 3.5
+        myView.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 0)
+        UIGraphicsBeginImageContext(frame.size)
+        let currentContext = UIGraphicsGetCurrentContext()
+        myView.layer.render(in: currentContext!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
     /*
      image sizes (height, width)
      double graphic with softbuttons 210, 370

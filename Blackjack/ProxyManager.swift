@@ -80,7 +80,7 @@ class ProxyManager: NSObject {
         }
         //stand button
         let standButtonState1 = SDLSoftButtonState(stateName: "default", text: "Stand", artwork: nil)
-        let standButtonObject = SDLSoftButtonObject(name: "Hit", states: [standButtonState1], initialStateName: "default") { (buttonPress, buttonEvent) in
+        let standButtonObject = SDLSoftButtonObject(name: "Stand", states: [standButtonState1], initialStateName: "default") { (buttonPress, buttonEvent) in
             if buttonPress != nil {
                 GameManager.shared.stand()
             }
